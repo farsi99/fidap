@@ -1,0 +1,50 @@
+/* POPIN */
+.bg_popin{
+	display:none;
+	width:100%;
+	height:100%;
+	padding-top:30px;
+	background-color:rgba(0,0,0,0.7);
+	position:fixed;
+	top:0;
+	left:0;
+	z-index:50000;
+}
+
+.close_popin{
+	color:#999;
+	font-size:14px;
+	font-family:'stratos-light','arial','helvetica','sans-serif';
+	letter-spacing:1px;
+	cursor:pointer;
+	position:absolute;
+	top:30px;
+	right:30px;
+	z-index:55000;
+}
+
+.close_popin img{
+	margin-top:-3px;
+	margin-left:15px;
+}
+
+.popin{
+	display:none;
+	max-height:600px;
+	overflow-y:auto;
+	padding:30px 15px;
+	background-color:#fff;
+	z-index:58000;
+}
+
+.linebtm{
+	border-bottom: 1px solid;
+}
+
+.paddinbtm{
+	padding-bottom: 30px;
+}
+.cercle{
+	width: 80px;
+	height: 80px;
+}

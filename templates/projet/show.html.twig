@@ -1,0 +1,93 @@
+<!-- Section: Blog -->
+{% set label='default' %}
+{% if projet.etat == 'En attente' %}
+	{% set label ='default' %}
+{% elseif projet.etat == 'En cours' %}
+	{% set label ='warning' %}
+{% elseif projet.etat == 'Validé' %}
+	{% set label= 'success' %}
+{% elseif projet.etat == 'Refusé' %}
+	{% set label = 'danger' %}
+{% endif %}
+<div class="row">
+	<div class="col-md-11 blog-pull-right">
+		<div class="single-service">
+			<div class="row">
+				<div class="col-md-12">
+					<h3 class="text-theme-colored title-border mb-1 mt-0 paddinbtm">{{projet.titre}}</h3>
+					<!-- contenue par ici -->
+					<div class="col-md-12">
+						<div class="row paddinbtm">
+							<h4 class="text-theme-colored linebtm">Etude</h4>
+							<div class="col-md-3">
+								<strong>Budget demandé :</strong>
+							</div>
+							<div class="col-md-3">
+								<strong class="badge badge-info">{{projet.budget|number_format(2, ',', '.')}}
+									€</strong>
+							</div>
+							<div class="col-md-3">
+								<strong>Satatus du projet :
+								</strong>
+							</div>
+							<div class="col-md-3">
+								<span class="label label-{{label}}">{{projet.etat}}</span>
+							</div>
+						</div>
+						<div class="row paddinbtm">
+							<h4 class="text-theme-colored linebtm">Echéance</h4>
+							<div class="col-md-3">
+								<strong>Date début:
+								</strong>
+							</div>
+							<div class="col-md-3">{{ projet.dateDebut |date('d-m-Y H:m')}}</div>
+							<div class="col-md-3">
+								<strong>Date Fin:</strong>
+							</div>
+							<div class="col-md-3">{{projet.dateDebut | date('d-m-Y H:m')}}</div>
+						</div>
+						<div class="row paddinbtm">
+							<h4 class="text-theme-colored linebtm">Porteur de projet</h4>
+							<div class="col-md-2">
+								<img src="{{vich_uploader_asset(projet.user,'imageFile')}}" alt="" class="img-circle cercle">
+							</div>
+							<div class="col-md-3">
+								<strong>Nom Complet:</strong>
+							</div>
+							<div class="col-md-3">{{projet.user.getFullName}}</div>
+							<div class="col-md-1">
+								<strong>Contact</strong>
+							</div>
+							<div class="col-md-3">{{projet.user.telephone}}
+								/
+								{{projet.user.email}}
+
+							</div>
+						</div>
+						<div class="row paddingbtm">
+							<h4 class="text-theme-colored linebtm">Description</h4>
+							<div class="col-md-3">
+								<strong>Type de projet:
+								</strong>
+							</div>
+							<div class="col-md-3">{{projet.typeProjet.libelle}}<br>
+								<hr>
+								<strong>Fichiers joints</strong><br>
+								{% for key,file in projet.fichiers %}
+									<a href="{{vich_uploader_asset(file,'imageFile')}}">
+										<i class="fa fa-download"></i>
+										Telecharger
+									</a>
+									<br>
+								{% endfor %}
+							</div>
+							<div class="col-md-6">{{projet.description | raw}}</div>
+						</div>
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

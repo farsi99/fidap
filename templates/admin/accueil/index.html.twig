@@ -1,0 +1,252 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Gestion admin
+{% endblock %}
+
+{% block body %}
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+
+
+        <!-- Main content -->
+            <section
+            class="content"> <!-- Small boxes (Stat box) -->
+            <div class="row">
+                <div
+                    class="col-lg-3 col-xs-6">
+                    <!-- small box -->
+                    <div class="small-box bg-aqua">
+                        <div class="inner">
+                            <h3>12</h3>
+
+                            <p>Evénements enregistrés</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fa fa-calendar"></i>
+                        </div>
+                        <a href="<?php echo site_url('admin-uprad/evenement'); ?>" class="small-box-footer">
+                            voir plus
+                            <i class="fa fa-arrow-circle-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div
+                    class="col-lg-3 col-xs-6">
+                    <!-- small box -->
+                    <div class="small-box bg-green">
+                        <div class="inner">
+                            <h3>16<sup style="font-size: 20px"></sup>
+                            </h3>
+
+                            <p>Propositions d'idées</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-stats-bars"></i>
+                        </div>
+                        <a href="<?php echo site_url('admin-uprad/tous-idees'); ?>" class="small-box-footer">
+                            voir plus
+                            <i class="fa fa-arrow-circle-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div
+                    class="col-lg-3 col-xs-6">
+                    <!-- small box -->
+                    <div class="small-box bg-yellow">
+                        <div class="inner">
+                            <h3>18</h3>
+
+                            <p>Adhérant au mouvement</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-person-add"></i>
+                        </div>
+                        <a href="<?php echo site_url('admin-uprad/adherant'); ?>" class="small-box-footer">
+                            voit plus
+                            <i class="fa fa-arrow-circle-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div
+                    class="col-lg-3 col-xs-6">
+                    <!-- small box -->
+                    <div class="small-box bg-red">
+                        <div class="inner">
+                            <h3>17,7</h3>
+
+                            <p>Visiteurs sur le site</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-pie-graph"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">
+                            voir plus
+                            <i class="fa fa-arrow-circle-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- ./col -->
+            </div>
+            <!-- /.row -->
+
+
+            <!-- Main row -->
+            <div
+                class="row">
+                <!-- Left col -->
+                <div class="col-md-8">
+                    <!-- MAP & BOX PANE -->
+                    <!-- TABLE: LATEST ORDERS -->
+                        <div class="box box-info"> <div class="box-header with-border">
+                            <h3 class="box-title">les 10 derniers adhérants</h3>
+
+                            <div class="box-tools pull-right">
+                                <button class="btn btn-box-tool" data-widget="collapse" type="button">
+                                    <i class="fa fa-minus"></i>
+                                </button>
+                                <button class="btn btn-box-tool" data-widget="remove" type="button">
+                                    <i class="fa fa-times"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- /.box-header -->
+                        <div class="box-body">
+                            <div class="table-responsive">
+                                <table class="table no-margin">
+                                    <thead>
+                                        <tr>
+                                            <th>Nom</th>
+                                            <th>Prénom</th>
+                                            <th>Email</th>
+                                            <th>Téléphone</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php if (!empty($membres)) {
+                                        foreach ($membres as $key => $val) {
+                                            if ($key < 9) { ?>
+                                            <tr>
+                                                <td>
+                                                    <a href="#"><?php echo $val->nom; ?></a>
+                                                </td>
+                                                <td><?php echo $val->prenom; ?></td>
+                                                <td>
+                                                    <div class="sparkbar" data-color="#00a65a" data-height="20"><?php echo $val->email; ?></div>
+                                                </td>
+                                                <td><?php echo $val->telephone; ?></td>
+                                                <td>
+                                                    <?php if ($val->etat == 1) { ?>
+                                                        <span class="label label-success">Validé</span>
+                                                    <?php } else { ?>
+                                                        <span class="label label-warning">En attente</span>
+                                                    <?php } ?>
+                                                </td>
+                                            </tr>
+                                        <?php }
+                                    }
+                                } ?>
+
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <!-- /.table-responsive -->
+                        </div>
+                        <!-- /.box-body -->
+                        <div class="box-footer clearfix"></div>
+                        <!-- /.box-footer -->
+                    </div>
+                    <!-- /.box -->
+                    <!-- /.box -->
+
+
+                </div>
+                <!-- /.col -->
+
+                <div class="col-md-4" style="margin-bottom:10px;">
+                    <div id="container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+                </div>
+                <div class="col-md-12">
+                    <div
+                        class="row">
+                        <!-- /.info-box -->
+                        <div class="col-md-4">
+                            <div class="info-box bg-green">
+                                <span class="info-box-icon">
+                                    <i class="ion ion-ios-heart-outline"></i>
+                                </span>
+
+                                <div class="info-box-content">
+                                    <span class="info-box-text">Dons</span>
+                                    <span class="info-box-number">92,050</span>
+
+                                    <div class="progress">
+                                        <div class="progress-bar" style="width: 20%"></div>
+                                    </div>
+                                    <span class="progress-description">
+                                        20% Increase in 30 Days
+                                    </span>
+                                </div>
+                                <!-- /.info-box-content -->
+                            </div>
+                        </div>
+                        <!-- Info Boxes Style 2 -->
+                        <div class="col-md-4">
+                            <div class="info-box bg-yellow">
+                                <span class="info-box-icon">
+                                    <i class="ion ion-ios-pricetag-outline"></i>
+                                </span>
+
+                                <div class="info-box-content">
+                                    <span class="info-box-text">Témoignages</span>
+                                    <span class="info-box-number"><?php echo $nbTemoignages; ?></span>
+
+                                    <div class="progress">
+                                        <div class="progress-bar" style="width: 50%"></div>
+                                    </div>
+                                    <span class="progress-description">
+                                        Nombre des témoignages publiés
+                                    </span>
+                                </div>
+                                <!-- /.info-box-content -->
+                            </div>
+                        </div>
+
+                        <!-- /.info-box -->
+                        <div
+                            class="col-md-4">
+                            <!-- /.info-box -->
+                            <div class="info-box bg-aqua">
+                                <span class="info-box-icon">
+                                    <i class="ion-ios-chatbubble-outline"></i>
+                                </span>
+
+                                <div class="info-box-content">
+                                    <span class="info-box-text">Newsletter</span>
+                                    <span class="info-box-number"><?php echo $nbNewsletter; ?></span>
+
+                                    <div class="progress">
+                                        <div class="progress-bar" style="width: 40%"></div>
+                                    </div>
+                                    <span class="progress-description">
+                                        Nombre d'emails envoyés
+                                    </span>
+                                </div>
+                                <!-- /.info-box-content -->
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- /.info-box -->
+                </div>
+
+
+            </div>
+            <!-- /.col -->
+        </section>
+    </div>
+{% endblock %}

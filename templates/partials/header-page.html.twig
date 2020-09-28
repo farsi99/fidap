@@ -1,0 +1,44 @@
+<!-- Section: inner-header -->
+<section class="inner-header divider parallax layer-overlay overlay-dark-5" {% if page.thumbnail is defined %} data-bg-img="{{vich_uploader_asset(page,'imageFile')}}" {% endif %}>
+	<div
+		class="container pt-70 pb-20">
+		<!-- Section Content -->
+		<div class="section-content">
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<h2 class="title text-white">
+						{% if page.menu is defined %}
+							{{page.menu}}
+						{% else %}
+							{{page}}
+						{% endif %}
+					</h2>
+					<ol class="breadcrumb text-center text-black mt-10">
+						<li>
+							<a href="{{path('accueil_index')}}">Accueil</a>
+						</li>
+						<li class="active text-gray-silver">
+							{% if page.menu is defined %}
+								{{page.menu}}
+							{% else %}
+								{{page}}
+							{% endif %}
+						</li>
+					</ol>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</section>
+<div class="row">
+	<div class="col-md-12">
+		{% for key, messages in app.flashes %}
+			<div class="alert alert-{{key}}">
+				{% for message in messages %}
+					<p class="text-center">{{message|raw}}</p>
+				{% endfor %}
+			</div>
+		{% endfor %}
+	</div>
+</div>

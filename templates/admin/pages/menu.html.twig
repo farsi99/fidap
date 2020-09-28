@@ -1,0 +1,103 @@
+{% extends "admin/base.html.twig" %}
+
+{% block title %}Gestion des menus
+{% endblock %}
+{% block body %}
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        {% include "admin/partials/sous-header.html.twig" with {'page': 'Pages'} %}
+
+        <!-- Main content -->
+        <section
+            class="content">
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="box">
+                        <div class="box-header box-tabl">
+                            <h3 class="box-title">Gestion des menus</h3>
+
+                            <div class="box-tools">
+                                <div class="input-group input-group-sm" style="width: 150px;">
+                                    <a href="" class="btn btn-primary">
+                                        <i class="fa fa-plus"></i>
+                                        Ajouter un menu</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.box-header -->
+                        <div class="box-body table-responsive no-padding">
+                            <table class="table table-hover">
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Titre page</th>
+                                    <th>titre menu</th>
+                                    <th>Ordre d'affichage</th>
+                                    <th>Status</th>
+                                    <th></th>
+                                </tr>
+                                {% for menu in menus %}
+                                    <tr>
+                                        <td>{{menu.id}}</td>
+                                        <td>{{menu.titre}}</td>
+                                        <td>{{menu.menu}}</td>
+                                        <td>
+                                            <span class="badge badge-dark">{{menu.ordre}}</span>
+                                        </td>
+                                        <td>
+                                            {% if menu.publication == 1 %}
+                                                <span class="label label-success">Publié</span>
+                                            {% else %}
+                                                <span class="label label-warning">En attente</span>
+                                            {% endif %}
+                                        </td>
+                                        <td>
+                                            <a href="{{path('admin_pages_menu_edit',{'id':menu.id})}}" class="btn btn-info" title="modifier">
+                                                <i class="fa fa-edit"></i>
+                                            </a>
+                                            <a href="{{path('admin_pages_delete',{'id':menu.id})}}" class="btn btn-danger" title="Supprimer">
+                                                <i class="fa fa-trash"></i>
+                                            </a>
+                                        </td>
+                                        {% for smenu in sousmenus %}
+                                            {% if menu.menu == smenu.MenuParent %}
+                                                <tr>
+                                                    <td></td>
+                                                    <td style="color:#1abc9c;">
+                                                        <i class="fa fa-angle-double-right"></i>
+                                                        {{smenu.titre}}</td>
+                                                    <td style="color:#1abc9c;">{{smenu.menu}}</td>
+                                                    <td style="color:#1abc9c;">
+                                                        <span class="badge badge-info">{{smenu.ordre}}</span>
+                                                    </td>
+                                                    <td style="color:#1abc9c;">
+                                                        {% if smenu.publication == 1 %}
+                                                            <span class="label label-success">Publié</span>
+                                                        {% else %}
+                                                            <span class="label label-warning">En attente</span>
+                                                        {% endif %}
+                                                    </td>
+                                                    <td style="color:#1abc9c;">
+                                                        <a href="{{path('admin_pages_menu_edit',{'id':smenu.id})}}" class="btn btn-info" title="modifier">
+                                                            <i class="fa fa-edit"></i>
+                                                        </a>
+                                                        <a href="{{path('admin_pages_delete',{'id':smenu.id})}}" class="btn btn-danger" title="Supprimer">
+                                                            <i class="fa fa-trash"></i>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </tr>
+                                {% endfor %}
+                            </table>
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+                    <!-- /.box -->
+                </div>
+            </div>
+        </section>
+        <!-- /.content -->
+    </div>
+{% endblock %}

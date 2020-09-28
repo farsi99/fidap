@@ -1,0 +1,71 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Gestion des actualités
+{% endblock %}
+
+{% block body %}
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        {% include "admin/partials/sous-header.html.twig" with {'page': 'Actualités'} %}
+
+        <!-- Main content -->
+        <section
+            class="content">
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="box">
+                        <div class="box-header box-tabl">
+                            <h3 class="box-title">Gestion des actualités</h3>
+
+                            <div class="box-tools">
+                                <div class="input-group input-group-sm" style="width: 150px;">
+                                    <a href="{{path('admin_posts_ajout')}}" class="btn btn-primary">
+                                        <i class="fa fa-plus"></i>
+                                        Ajouter un article</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.box-header -->
+                        <div class="box-body table-responsive no-padding">
+                            <table class="table table-hover">
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Titre</th>
+                                    <th>Date création</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                                {% for post in posts %}
+                                    <tr>
+                                        <td>{{post.id}}</td>
+                                        <td>{{post.titre}}</td>
+                                        <td>{{post.dateCreation|date('d-m-Y H:i')}}</td>
+                                        <td>
+                                            {% if post.publication == 1 %}
+                                                <span class="label label-success">Publié</span>
+                                            {% else %}
+                                                <span class="label label-warning">En attente</span>
+                                            {% endif %}
+                                        </td>
+                                        <td>
+                                            <a href="{{path('admin_posts_edit',{'id':post.id})}}" class="btn btn-info" title="modifier">
+                                                <i class="fa fa-edit"></i>
+                                            </a>
+                                            <a href="{{path('admin_posts_delete',{'id':post.id})}}" class="btn btn-danger" title="Supprimer">
+                                                <i class="fa fa-trash"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            </table>
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+                    <!-- /.box -->
+                </div>
+            </div>
+        </section>
+        <!-- /.content -->
+    </div>
+{% endblock %}

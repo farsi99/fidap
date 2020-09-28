@@ -1,0 +1,25 @@
+<div class="services-list">
+    <ul class="list list-border angle-double-right">
+
+        <li {% if asidemenu == 'profil' %} class="active" {% endif %}>
+            <a href="{{path('account_profil')}}">Information personnelle</a>
+        </li>
+        <li {% if asidemenu =='compte' %} class="active" {% endif %}>
+            <a href="{{path('compt_editer_profil',{'id': app.user.id})}}">Completer mon compte</a>
+        </li>
+        <li {% if asidemenu =='identifiant' %} class="active" {% endif %}>
+            <a href="{{path('account_reset_password',{'id': app.user.id})}}">Identifiant & Mot de passe</a>
+        </li>
+        <li {% if asidemenu =='projet' %} class="active" {% endif %}>
+            <a href="{{path('account_projet_index')}}">Suivre mes projets</a>
+        </li>
+        <li {% if asidemenu =='projetcreate' %} class="active" {% endif %}>
+            <a href="{{path('account_projet_create')}}">Sousmettre un projet</a>
+        </li>
+        <li>
+            <i class="fa fa-sign-out"></i>
+            <a href="{{path('account_logout')}}">Déconnexion du profil</a>
+        </li>
+
+    </ul>
+</div>

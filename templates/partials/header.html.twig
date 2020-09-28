@@ -1,0 +1,27 @@
+<div class="clearfix" id="wrapper">
+	<!-- preloader 
+				        <div id="preloader">
+				            <div id="spinner">
+				                <img alt="" src="{{asset('images/5.gif')}}">
+				            </div>
+				            <div class="btn btn-default btn-sm" id="disable-preloader">Disable Preloader</div>
+				        </div>
+				        -->
+
+	<!-- Header -->
+		<header class="header" id="header"> <div class="header-nav">
+			<div class="header-nav-wrapper navbar-scrolltofixed bg-white">
+				<div class="container">
+					<nav class="menuzord default" id="menuzord-right">
+						<a class="menuzord-brand pull-left flip" href="{{path('accueil_index')}}">
+							<img alt="" src="{{asset('images/new-logo.jpg')}}">
+						</a>
+
+						{{ knp_menu_render('navigator', {'currentClass': 'active'}) }}
+
+
+					</nav>
+				</div>
+			</div>
+		</div>
+	</header>

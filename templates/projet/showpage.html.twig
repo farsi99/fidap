@@ -1,0 +1,233 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{projet.titre}}
+{% endblock %}
+
+{% block body %}
+
+	{% set label='default' %}
+	{% if projet.etat == 'En attente' %}
+		{% set label ='default' %}
+	{% elseif projet.etat == 'En cours' %}
+		{% set label ='warning' %}
+	{% elseif projet.etat == 'Validé' %}
+		{% set label= 'success' %}
+	{% elseif projet.etat == 'Refusé' %}
+		{% set label = 'danger' %}
+	{% endif %}
+	<!-- Start main-content -->
+	<div
+		class="main-content bg-lighter">
+		<!-- Section: inner-header -->
+		{% include "partials/header-page.html.twig" with {'page': projet.titre} %}
+
+		<!-- Section: About -->
+		<section id="about">
+			<div class="container pb-70">
+				<div class="section-content">
+					<div class="row">
+						<div class="col-md-8 col-sm-12 wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.3s">
+							<h2 class="text-uppercase mt-0">{{projet.titre}}</span>
+						</h2>
+						<div class="row mt-30">
+							<div class="col-sm-3 col-md-3">
+								<strong>Date Début:</strong>
+								<br>
+								{{projet.dateDebut | date('d-M-Y H:m')}}
+							</div>
+							<div class="col-sm-3 col-md-3">
+								<strong>Date Fin:</strong><br>
+								{{projet.dateFin | date('d-M-Y h:m')}}
+							</div>
+							<div class="col-sm-3 col-md-3">
+								<strong>Budget:</strong><br>
+								<strong class='badge badge-default'>{{projet.budget | number_format(2,',','.')}}
+									€</strong>
+							</div>
+							<div class="col-sm-3 col-md-3">
+								<strong>Status :</strong><br>
+								<em class='label label-{{label}}'>{{projet.etat}}</em>
+							</div>
+						</div><br>
+						{{projet.description | raw}}
+						<a class="btn btn-colored btn-theme-colored btn-small text-uppercase font-13 mt-30" href="">Catégorie:
+							<em>{{projet.typeProjet.libelle}}</em>
+						</a>
+					</div>
+
+
+					<div class="col-xs-12 col-sm-6 col-md-4 pl-40 pl-sm-20 mr-sm-20 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s">
+						<h3 class="text-uppercase line-bottom mt-sm-30 mt-0">Projet
+							<span class="text-theme-colored">
+								porté par:</span>
+						</h3>
+						<div class="bxslider bx-nav-top p-0 m-0">
+							<div class="col-xs-12 pr-0 col-sm-6 col-md-6 mb-20">
+								<div class="pricing  maxwidth400">
+									<div class="row">
+										<div class="icon-box icon-box-effect mb-0 mt-0 p-15 bg-theme-colored border-bottom-3px">
+											<a href="#" class="icon mb-0 mr-0 pull-left flip">
+												<i class="fa fa-home text-white font-48"></i>
+											</a>
+											<div class="ml-80">
+												<h5 class="icon-box-title mt-15 mb-5 text-white text-left">
+													<strong>{{projet.user.getfullName}}</strong>
+												</h5>
+												<p class="text-white text-left">Lorem ipsum dolor sit ametcon elit sectetu radipisicing. Mollitia quasi.<a class="font-15 pl-10 text-white" href="page-about-style1.html">
+														read more...</a>
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Divider: Reservation Form -->
+	<section>
+		<div class="container pt-0 pb-0">
+			<div class="row">
+				<div class="col-md-7">
+					<div
+						class="p-40 pl-0">
+						<!-- Reservation Form Start-->
+						<form id="reservation_form" name="reservation_form" class="reservation-form" method="post" action="includes/reservation.php">
+							<h3 class="mt-0 line-bottom mb-40">Get A Free<span class="text-theme-color-2">
+									Service Now!</span>
+							</h3>
+							<div class="row">
+								<div class="col-sm-12">
+									<div class="form-group mb-30">
+										<input placeholder="Enter Name" type="text" id="reservation_name" name="reservation_name" required="" class="form-control">
+									</div>
+								</div>
+								<div class="col-sm-6">
+									<div class="form-group mb-30">
+										<input placeholder="Email" type="text" id="reservation_email" name="reservation_email" class="form-control" required="">
+									</div>
+								</div>
+								<div class="col-sm-6">
+									<div class="form-group mb-30">
+										<input placeholder="Phone" type="text" id="reservation_phone" name="reservation_phone" class="form-control" required="">
+									</div>
+								</div>
+								<div class="col-sm-6">
+									<div class="form-group mb-30">
+										<div class="styled-select">
+											<select id="booking_service" name="booking_service" class="form-control" required="">
+												<option value="">- Select Your  Courses -</option>
+												<option value="Accounting Technoloiges">Accounting Technoloiges</option>
+												<option value="Chemical Engineering">Chemical Engineering</option>
+												<option value="Computer Technologies">Computer Technologies</option>
+												<option value="Development Studies">Development Studies</option>
+												<option value="Electrical & Electronic">Electrical & Electronic</option>
+												<option value="Modern Languages">Modern Languages</option>
+												<option value="Modern Technologies">Modern Technologies</option>
+												<option value="Software Engineering">Software Engineering</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-6">
+									<div class="form-group mb-30">
+										<input name="reservation_date" class="form-control required date-picker" type="text" placeholder="Reservation Date" aria-required="true">
+									</div>
+								</div>
+								<div class="col-sm-12">
+									<div class="form-group mb-0 mt-0">
+										<input name="form_botcheck" class="form-control" type="hidden" value="">
+										<button type="submit" class="btn btn-colored btn-theme-colored btn-lg btn-flat border-left-theme-color-2-4px" data-loading-text="Please wait...">Submit Now</button>
+									</div>
+								</div>
+							</div>
+						</form>
+						<!-- Reservation Form End-->
+
+						<!-- Reservation Form Validation Start-->
+						<script type="text/javascript">
+							$("#reservation_form").validate({
+submitHandler: function (form) {
+var form_btn = $(form).find('button[type="submit"]');
+var form_result_div = '#form-result';
+$(form_result_div).remove();
+form_btn.before('<div id="form-result" class="alert alert-success" role="alert" style="display: none;"></div>');
+var form_btn_old_msg = form_btn.html();
+form_btn.html(form_btn.prop('disabled', true).data("loading-text"));
+$(form).ajaxSubmit({
+dataType: 'json',
+success: function (data) {
+if (data.status == 'true') {
+$(form).find('.form-control').val('');
+}
+form_btn.prop('disabled', false).html(form_btn_old_msg);
+$(form_result_div).html(data.message).fadeIn('slow');
+setTimeout(function () {
+$(form_result_div).fadeOut('slow')
+}, 6000);
+}
+});
+}
+});
+						</script>
+						<!-- Reservation Form Validation Start -->
+					</div>
+				</div>
+				<div class="col-md-5">
+					<img src="{{asset('images/3.jpg')}}" alt="Image 3">
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Divider: Clients -->
+	<section class="clients bg-theme-colored">
+		<div class="container pt-10 pb-0 pt-sm-0 pb-sm-0">
+			<div class="row">
+				<div
+					class="col-md-12">
+					<!-- Section: Clients -->
+					<div class="owl-carousel-6col transparent text-center owl-nav-top">
+						<div class="item">
+							<a href="#"><img src="{{asset('images/w1.png')}}" alt=""></a>
+						</div>
+						<div class="item">
+							<a href="#"><img src="{{asset('images/w2.png')}}" alt=""></a>
+						</div>
+						<div class="item">
+							<a href="#"><img src="{{asset('images/w3.png')}}" alt=""></a>
+						</div>
+						<div class="item">
+							<a href="#"><img src="{{asset('images/w4.png')}}" alt=""></a>
+						</div>
+						<div class="item">
+							<a href="#"><img src="{{asset('images/w5.png')}}" alt=""></a>
+						</div>
+						<div class="item">
+							<a href="#"><img src="{{asset('images/w6.png')}}" alt=""></a>
+						</div>
+						<div class="item">
+							<a href="#"><img src="{{asset('images/w3.png')}}" alt=""></a>
+						</div>
+						<div class="item">
+							<a href="#"><img src="{{asset('images/w4.png')}}" alt=""></a>
+						</div>
+						<div class="item">
+							<a href="#"><img src="{{asset('images/w5.png')}}" alt=""></a>
+						</div>
+						<div class="item">
+							<a href="#"><img src="{{asset('images/w6.png')}}" alt=""></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+</div>
+<!-- end main-content -->{% endblock %}

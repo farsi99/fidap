@@ -1,0 +1,22 @@
+<section class="content-header">
+    <ol class="breadcrumb">
+        <li>
+            <a href="#">
+                <i class="fa fa-dashboard"></i>
+                Accueil</a>
+        </li>
+        <li class="active">{{page}}</li>
+    </ol>
+    <div class="row">
+        <div class="col-md-12">
+            {% for key, messages in app.flashes %}
+                <div class="callout callout-{{key}}">
+                    {% for message in messages %}
+                        <p>{{message|raw}}</p>
+                    {% endfor %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+</section>

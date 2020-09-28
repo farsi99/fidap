@@ -1,0 +1,247 @@
+<aside
+    class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section
+        class="sidebar">
+        <!-- Sidebar user panel -->
+        <div class="user-panel">
+            <div class="pull-left image">
+                <img alt="User Image" class="img-circle" src="/admin/img/user2-160x160.jpg">
+            </div>
+            <div class="pull-left info">
+                <p style="text-transform:uppercase;">Farouk Soulé</p>
+                <a href="#">
+                    <i class="fa fa-circle text-success"></i>
+                    En ligne</a>
+            </div>
+        </div>
+
+        <!-- sidebar menu: : style can be found in sidebar.less -->
+        <ul class="sidebar-menu" data-widget="tree">
+            <li class="header">MENU NAVIGATION</li>
+            <li class="active treeview menu-open">
+                <a href="#">
+                    <i class="fa fa-dashboard"></i>
+                    <span>
+                        <b>TABLEAU DE BORD</b>
+                    </span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li>
+                        <a href="<?php echo site_url('admin-uprad'); ?>">
+                            <i class="fa fa-circle-o"></i>
+                            Tableau de bord</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-th"></i>
+                    <span>Pages</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li>
+                        <a href="{{path('admin_pages_index')}}">
+                            <i class="fa fa-circle-o"></i>
+                            Toutes les pages</a>
+                    </li>
+                    <li>
+                        <a href="{{path('admin_pages_ajout')}}">
+                            <i class="fa fa-circle-o"></i>
+                            Ajouter</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-files-o"></i>
+                    <span>Actaulités</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li>
+                        <a href="{{path('admin_posts_index')}}">
+                            <i class="fa fa-circle-o"></i>
+                            Tous les articles</a>
+                    </li>
+                    <li>
+                        <a href="{{path('admin_posts_ajout')}}">
+                            <i class="fa fa-circle-o"></i>
+                            Ajouter</a>
+                    </li>
+
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-map-marker"></i>
+                    <span>Filiales</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li>
+                        <a href="{{path('admin_filiale_index')}}">
+                            <i class="fa fa-circle-o"></i>
+                            Toutes les filiales</a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="fa fa-circle-o"></i>
+                            Ajouter</a>
+                    </li>
+                </ul>
+            </li>
+
+
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-bell-o"></i>
+                    <span>Gestion des projets</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                        <small class="label pull-right bg-yellow"><?php attenteSalon(); ?></small>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li>
+                        <a href="{{path('admin_projet_index')}}">
+                            <i class="fa fa-circle-o"></i>
+                            toutes les propositions</a>
+                    </li>
+                    <li>
+                        <a href="{{path('admin_projet_ajout')}}">
+                            <i class="fa fa-circle-o"></i>
+                            Ajouter</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo site_url('admin-uprad/attente-idees'); ?>">
+                            <i class="fa fa-circle-o"></i>
+                            En attentes</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo site_url('admin-uprad/retenues-idees'); ?>">
+                            <i class="fa fa-circle-o"></i>
+                            Retenues</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-flag-o"></i>
+                    <span>Communications</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li>
+                        <a href="<?php echo site_url('admin-uprad/temoignage'); ?>">
+                            <i class="fa fa-circle-o"></i>
+                            Toues les témoignages</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo site_url('admin-uprad/ajout-temoignage'); ?>">
+                            <i class="fa fa-circle-o"></i>
+                            Ajouter</a>
+                    </li>
+
+
+                </ul>
+            </li>
+
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-users"></i>
+                    <span>Membres</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right" title="En attente de validation"></i>
+                        <small class="label pull-right bg-red"><?php attenteMembre() ?></small>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li>
+                        <a href="<?php echo site_url('admin-uprad/adherant'); ?>">
+                            <i class="fa fa-circle-o"></i>
+                            Tous les adherants</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo site_url('admin-uprad/equipe'); ?>">
+                            <i class="fa fa-circle-o"></i>
+                            Toute l'équipe</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo site_url('admin-uprad/adherant-equipe') ?>">
+                            <i class="fa fa-circle-o"></i>
+                            Adherant => équipe</a>
+                    </li>
+
+                </ul>
+            </li>
+            <li class="active treeview menu-open">
+                <a href="#">
+                    <i class="fa fa-gears"></i>
+                    <span>
+                        <b>PARAMETRAGES</b>
+                    </span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-list"></i>
+                    <span>Gestion des menus</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li>
+                        <a href="{{path('admin_pages_menu')}}">
+                            <i class="fa fa-circle-o"></i>
+                            Tous les menus</a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-circle-o"></i>
+                            Ajouter</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-photo"></i>
+                    <span>Gestion des sliders</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li>
+                        <a href="{{path('admin_slider_index')}}">
+                            <i class="fa fa-circle-o"></i>
+                            Tous les sliders</a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-circle-o"></i>
+                            Ajouter</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+    <!-- /.sidebar -->
+</aside>

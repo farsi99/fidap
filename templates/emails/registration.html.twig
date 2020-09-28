@@ -1,0 +1,10 @@
+{# templates/emails/registration.html.twig #}
+<h3>Vous avez fait une inscription en tant que porteur de projet</h3>
+
+Bonjour
+{{ nom }}!.
+<p>Pour votre demande de creation de compte,voila un mail vous permettant d'initialiser votre mot de passe, merci de cliquer sur le lien suivant:
+    <a href="http://127.0.0.1:8000/compte/create/{{token}}">Créer votre mot de passe</a>
+</p>
+
+Merci !

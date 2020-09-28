@@ -1,0 +1,118 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Creation de votre compte
+{% endblock %}
+
+{% block body %}
+    <body class="">
+        <div
+            id="wrapper" class="clearfix">
+            <!-- Start main-content -->
+            <div
+                class="main-content">
+                <!-- Section: inner-header -->
+                {% include "partials/header-page.html.twig" with {'page': 'Création de compte'} %}
+                <div class="row">
+                    <div class="col-md-12">
+                        {% for key, messages in app.flashes %}
+                            <div class="alert alert-{{key}}">
+                                {% for message in messages %}
+                                    <p>{{message|raw}}</p>
+                                {% endfor %}
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <!-- Divider: Contact -->
+                <section class="divider">
+                    <div class="container">
+                        <div class="row pt-30">
+                            <div class="col-md-4">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-12">
+                                        <div class="icon-box left media bg-deep p-30 mb-20">
+                                            <a class="media-left pull-left" href="#">
+                                                <i class="pe-7s-map-2 text-theme-colored"></i>
+                                            </a>
+                                            <div class="media-body">
+                                                <strong>NOTRE SIEGE EN FRANCE</strong>
+                                                <p>#405, Rue de provence 94800</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-12">
+                                        <div class="icon-box left media bg-deep p-30 mb-20">
+                                            <a class="media-left pull-left" href="#">
+                                                <i class="pe-7s-call text-theme-colored"></i>
+                                            </a>
+                                            <div class="media-body">
+                                                <strong>CONTACT PAR TELEPHONE</strong>
+                                                <p>+325 12345 65478</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-12">
+                                        <div class="icon-box left media bg-deep p-30 mb-20">
+                                            <a class="media-left pull-left" href="#">
+                                                <i class="pe-7s-mail text-theme-colored"></i>
+                                            </a>
+                                            <div class="media-body">
+                                                <strong>CONTACTE PAR E-MAIL</strong>
+                                                <p>supporte@yourdomin.com</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-12">
+                                        <div class="icon-box left media bg-deep p-30 mb-20">
+                                            <a class="media-left pull-left" href="#">
+                                                <i class="pe-7s-film text-theme-colored"></i>
+                                            </a>
+                                            <div class="media-body">
+                                                <strong>CONTACT VISIO SKYPE</strong>
+                                                <p>ThemeMascotSkype</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <h3 class="line-bottom mt-0 mb-20">Formulaire de création de compte !</h3>
+                                <!-- Contact Form -->
+                                {{form_start(form,{'attr':{'id':'contact_form'}})}}
+
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            {{form_row(form.email)}}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            {{form_row(form.motpasse)}}
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            {{form_row(form.confpass)}}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <input name="form_botcheck" class="form-control" type="hidden" value=""/>
+                                    <button type="submit" class="btn btn-flat btn-theme-colored text-uppercase mt-10 mb-sm-30 border-left-theme-color-2-4px" data-loading-text="Please wait...">Valider votre enregistrement</button>
+                                    <button type="reset" class="btn btn-flat btn-theme-colored text-uppercase mt-10 mb-sm-30 border-left-theme-color-2-4px">annuler</button>
+                                </div>
+                            </div>
+                            {{form_end(form)}}
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- end main-content -->
+
+    </body>
+{% endblock %}

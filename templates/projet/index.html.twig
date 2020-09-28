@@ -1,0 +1,164 @@
+{% extends "base.html.twig" %}
+{% block title %}Gestion de vos projets
+{% endblock %}
+{% block stylesheets %}
+	<link href="{{asset('css/popin.css')}}" rel="stylesheet" type="text/css">
+{% endblock %}
+{% block body %}
+
+	<!-- Start main-content -->
+	<div
+		class="main-content bg-lighter">
+		<!-- Section: inner-header -->
+		{% include "partials/header-page.html.twig" with {'page': 'Parofil Abonné'} %}
+
+		<!-- Section: Blog -->
+		<section>
+			<div class="container mt-30 mb-0 pt-30 pb-30">
+				<div class="row">
+					<div class="col-md-8 blog-pull-right">
+						<div class="single-service">
+							<div class="row">
+								<div class="col-md-12">
+
+									<div class="row">
+										<div class="col-md-12">
+											<div class="row">
+												<div class="col-md-8">
+													<h3 class="text-theme-colored title-border mb-1 mt-20">Gestion de mes projets personnels</h3>
+												</div>
+
+											</div>
+											<table class="table table-bordered">
+												<thead>
+													<tr>
+														<th>Titre du projet</th>
+														<th>Date début</th>
+														<th>Date Fin</th>
+														<th>Budget</th>
+														<th>Status</th>
+														<th></th>
+													</tr>
+												</thead>
+												<tbody>
+													{% for projet in projets %}
+														{% set label='default' %}
+														{% if projet.etat == 'En attente' %}
+															{% set label ='default' %}
+														{% elseif projet.etat == 'En cours' %}
+															{% set label ='warning' %}
+														{% elseif projet.etat == 'Validé' %}
+															{% set label= 'success' %}
+														{% elseif projet.etat == 'Refusé' %}
+															{% set label = 'danger' %}
+														{% endif %}
+														<tr>
+															<td>{{projet.titre}}</td>
+															<td>{{projet.dateDebut | date('d-m-Y')}}</td>
+															<td>{{projet.dateFin | date('d-m-Y')}}</td>
+															<td>
+																<strong class="badge badge-info">{{projet.budget|number_format(2, ',', '.')}}
+																	€</strong>
+															</td>
+															<td>
+																<span class="label label-{{label}}">
+																	{{projet.etat}}</span>
+															</td>
+
+															<td style="width: 110px;">
+																<a href="#" id="{{projet.id}}" data-lien="{{path('projet_account_show',{'id': projet.id})}}" class="label label-info view-popin" title="Visualisez">
+																	<i class="fa fa-eye"></i>
+																</a>&nbsp;
+																<a href="{{path('projet_account_update',{'id': projet.id})}}" class="label label-success" title="Modifier">
+																	<i class="fa fa-edit"></i>
+																</a>&nbsp;
+																<a href="{{path('projet_account_delete',{'id': projet.id})}}" class="label label-danger" title="supprimer">
+																	<i class="fa fa-trash"></i>
+																</a>
+															</td>
+														</tr>
+													{% endfor %}
+
+												</tbody>
+											</table>
+										</div>
+									</div>
+
+
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-12 col-md-4">
+						<div class="sidebar sidebar-left mt-sm-30 ml-40">
+							<div class="widget">
+								<h4 class="widget-title line-bottom">
+									<i class="fa fa-mecanic"></i>
+									Parametrage</h4>
+								{% include "partials/aside.html.twig" %}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="bg_popin">
+			<div class="row">
+				<div class="col-sm-8 col-sm-offset-2 popin">
+					<div class="close_popin">
+						Fermer
+						<img src="{{asset('images/picto-close-grise-simple.svg')}}" height="30"/>
+					</div>
+					<div id="show-popin"></div>
+				</div>
+			</div>
+		</section>
+
+	</div>
+	<!-- end main-content -->
+
+	<a class="scrollToTop" href="#">
+		<i class="fa fa-angle-up"></i>
+	</a>
+</div>
+
+<!-- Footer Scripts -->
+<!-- JS | Custom script for all pages -->
+<script>
+	// affihage du popin
+$(".view-popin").click(function () {
+$(".bg_popin").show('slow');
+$(".popin").show('slow');
+var id = $(this).attr('id');
+var lien = $(this).attr('data-lien');
+
+$.ajax({
+type: 'POST',
+url: lien,
+data: {
+'id': id
+},
+success: function (data) {
+if (data === 'NO') {
+alert('ce projet n\'existe pas !');
+return false;
+}
+$('#show-popin').html(data);
+return false;
+}
+});
+});
+
+// fermeture du popin
+/*
+$(".bg_popin").click(function () {
+$(".bg_popin").hide('slow');
+$(".popin").hide('slow');
+});*/
+
+// fermeture du popin
+$('.close_popin').click(function () {
+$(".bg_popin").hide('slow');
+$(".popin").hide('slow');
+});
+</script></body></html>{% endblock %}

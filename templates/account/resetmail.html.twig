@@ -1,0 +1,69 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mot de passe oublié
+{% endblock %}
+
+{% block body %}
+    <body>
+        <div
+            id="wrapper" class="clearfix">
+            <!-- Start main-content -->
+            <div
+                class="main-content">
+                <!-- Section: inner-header -->
+                {% include "partials/header-page.html.twig" with {'page': 'Accès à votre espace personnalisée'} %}
+                <div class="row">
+                    <div class="col-md-12">
+                        {% for key, messages in app.flashes %}
+                            <div class="alert alert-{{key}}">
+                                {% for message in messages %}
+                                    <p>{{message|raw}}</p>
+                                {% endfor %}
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <!-- Divider: Contact -->
+                <section class="divider">
+                    <div class="container">
+                        <div class="row pt-30">
+                            <div class="col-md-4"></div>
+                            <div class="col-md-4">
+                                <h3 class="line-bottom mt-0 mb-20">
+                                    <i class="fa fa-envelope"></i>
+                                    votre adresse email
+                                </h3>
+                                <!-- Contact Form -->
+                                {{form_start(form)}}
+
+                                <div class="form-group has-feedback">
+                                    {{form_row(form.email)}}
+                                    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                                </div>
+                                <div
+                                    class="row">
+                                    <!-- /.col -->
+                                    <div class="col-xs-4 pt-btn">
+                                        <input name="form_botcheck" class="form-control" type="hidden" value=""/>
+                                        <button type="submit" class="btn btn-flat btn-theme-colored text-uppercase mt-10 mb-sm-30 border-left-theme-color-2-4px" data-loading-text="Please wait...">Envoyer</button>
+                                    </div>
+                                    <div class="col-xs-2"></div>
+                                    <div class="col-xs-6">
+                                        <a href="{{path('account_login')}}">Retournez vers le login ?</a>
+                                    </div>
+
+                                    <!-- /.col -->
+                                </div>
+
+                                {{form_end(form)}}
+
+                            </div>
+                            <div class="col-md-4"></div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <!-- end main-content -->
+
+
+        {% endblock %}

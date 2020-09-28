@@ -1,0 +1,750 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil du site
+{% endblock %}
+
+{% block body %}
+	<!-- Start main-content -->
+	<div
+		class="main-content">
+		<!-- Section: home -->
+		<section
+			id="home">
+
+			<!-- slider par ici -->
+			{% include "partials/slider.html.twig" with {'slider': sliders} %}
+			<script>
+				$(document).ready(function (e) {
+$(".rev_slider").revolution({
+sliderType: "standard",
+sliderLayout: "auto",
+dottedOverlay: "none",
+delay: 5000,
+navigation: {
+keyboardNavigation: "off",
+keyboard_direction: "horizontal",
+mouseScrollNavigation: "off",
+onHoverStop: "off",
+touch: {
+touchenabled: "on",
+swipe_threshold: 75,
+swipe_min_touches: 1,
+swipe_direction: "horizontal",
+drag_block_vertical: false
+},
+arrows: {
+style: "zeus",
+enable: true,
+hide_onmobile: true,
+hide_under: 600,
+hide_onleave: true,
+hide_delay: 200,
+hide_delay_mobile: 1200,
+tmp: '<div class="tp-title-wrap">    <div class="tp-arr-imgholder"></div> </div>',
+left: {
+h_align: "left",
+v_align: "center",
+h_offset: 30,
+v_offset: 0
+},
+right: {
+h_align: "right",
+v_align: "center",
+h_offset: 30,
+v_offset: 0
+}
+},
+bullets: {
+enable: true,
+hide_onmobile: true,
+hide_under: 600,
+style: "metis",
+hide_onleave: true,
+hide_delay: 200,
+hide_delay_mobile: 1200,
+direction: "horizontal",
+h_align: "center",
+v_align: "bottom",
+h_offset: 0,
+v_offset: 30,
+space: 5,
+tmp: '<span class="tp-bullet-img-wrap">  <span class="tp-bullet-image"></span></span><span class="tp-bullet-title">                                                                                     {{ title }}span>'
+}
+},
+responsiveLevels: [
+1240, 1024, 778
+],
+visibilityLevels: [
+1240, 1024, 778
+],
+gridwidth: [
+1170, 1024, 778, 480
+],
+gridheight: [
+650, 768, 960, 720
+],
+lazyType: "none",
+parallax: {
+origo: "slidercenter",
+speed: 1000,
+levels: [
+5,
+10,
+15,
+20,
+25,
+30,
+35,
+40,
+45,
+46,
+47,
+48,
+49,
+50,
+100,
+55
+],
+type: "scroll"
+},
+shadow: 0,
+spinner: "off",
+stopLoop: "on",
+stopAfterLoops: 0,
+stopAtSlide: -1,
+shuffle: "off",
+autoHeight: "off",
+fullScreenAutoWidth: "off",
+fullScreenAlignForce: "off",
+fullScreenOffsetContainer: "",
+fullScreenOffset: "0",
+hideThumbsOnMobile: "off",
+hideSliderAtLimit: 0,
+hideCaptionAtLimit: 0,
+hideAllCaptionAtLilmit: 0,
+debugMode: false,
+fallbacks: {
+simplifyAll: "off",
+nextSlideOnWindowFocus: "off",
+disableFocusListener: false
+}
+});
+});
+			</script>
+			<!-- Slider Revolution Ends -->
+
+		</section>
+
+		<!-- Section: home-boxes -->
+		<section>
+			<div class="container pt-0 pb-0">
+				<div class="section-content">
+					<div class="row equal-height-inner home-boxes" data-margin-top="-100px">
+						<div class="col-sm-12 col-md-3 pl-0 pl-sm-15 pr-0 pr-sm-15 sm-height-auto mt-sm-0 wow fadeInLeft animation-delay1">
+							<div class="sm-height-auto bg-theme-colored">
+								<div class="text-center pt-30 pb-30">
+									<i class="fa fa-connectdevelop text-white font-64 pb-10"></i>
+									<div class="p-10">
+										<h4 class="text-uppercase text-white mt-0">Mutualiser nos moyens</h4>
+										<p class="text-white">Lorem ipsum dolor sit amet,
+											<br>
+											conse ctetur
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                												adipisicing.</p>
+										<a class="btn btn-border btn-circled btn-transparent btn-sm" href="#">Join
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                												us Now</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-12 col-md-3 pl-0 pl-sm-15 pr-0 pr-sm-15 sm-height-auto mt-sm-0 wow fadeInLeft animation-delay2">
+							<div class="sm-height-auto bg-theme-colored-darker2">
+								<div class="text-center pt-30 pb-30">
+									<i class="fa fa-files-o text-white font-64 pb-10"></i>
+									<div class="p-10">
+										<h4 class="text-uppercase text-white mt-0">Nos activités</h4>
+										<p class="text-white">Lorem ipsum dolor sit amet,
+											<br>
+											conse ctetur
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                												adipisicing.</p>
+										<a class="btn btn-border btn-circled btn-transparent btn-sm" href="#">Get
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                												help</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-12 col-md-3 pl-0 pl-sm-15 pr-0 pr-sm-15 sm-height-auto mt-sm-0 wow fadeInLeft animation-delay3">
+							<div class="sm-height-auto bg-theme-colored-darker3">
+								<div class="text-center pt-30 pb-30">
+									<i class="fa fa-signal text-white font-64 pb-10"></i>
+									<div class="p-10">
+										<h4 class="text-uppercase text-white mt-0">Nos objectifs</h4>
+										<p class="text-white">Lorem ipsum dolor sit amet,
+											<br>
+											conse ctetur
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                												adipisicing.</p>
+										<a class="btn btn-border btn-circled btn-transparent btn-sm" href="#">Give
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                												Payment</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-12 col-md-3 pl-0 pl-sm-15 pr-0 pr-sm-15 sm-height-auto mt-sm-0 wow fadeInLeft animation-delay4">
+							<div class="sm-height-auto bg-theme-colored-darker4">
+								<div class="text-center pt-30 pb-30">
+									<i class="fa fa-send text-white font-64 pb-10"></i>
+									<div class="p-10">
+										<h4 class="text-uppercase text-white mt-0">Notre mission</h4>
+										<p class="text-white">Lorem ipsum dolor sit amet,
+											<br>
+											conse ctetur
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                												adipisicing.</p>
+										<a class="btn btn-border btn-circled btn-transparent btn-sm" href="#">Call
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                												us Now</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+		<!-- Section: About -->
+		<section id="about">
+			<div class="container pb-70">
+				<div class="section-content">
+					<div class="row">
+						<div class="col-md-8 col-sm-12">
+							<h2 class=" mt-0">Cooperative International des Services d'Aide à la personne et de la
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            									Finance Soldaire
+								<span class="text-theme-color-2">
+									?
+								</span>
+							</h2>
+							<p class="lead">Lorem ipsum dolor sit amet, consectetur adipisi cing elit. Quos dolo rem
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            									consequ untur natus laudantium commodi earum aliquid in ullam.Antium commodi.</p>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis illum,
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            									veritatis! Porro voluptas vitae aliquam iste ullam sapiente, id! Quos, suscipit.
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            									Officiis delectus optio nam fugit doloribus accusamus iste autem possimus deserunt.
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            									Quisquam incidunt eum vel ea reiciendis quae. Delectus. Officiis delectus optio nam
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            									fugit.</p>
+							<div class="row mt-30">
+								<div class="col-sm-4 col-md-4">
+									<img alt="" class="img-fullwidth mb-sm-30" src="images/a1.jpg">
+								</div>
+								<div class="col-sm-4 col-md-4">
+									<img alt="" class="img-fullwidth mb-sm-30" src="images/a2.jpg">
+								</div>
+								<div class="col-sm-4 col-md-4">
+									<img alt="" class="img-fullwidth mb-sm-30" src="images/a3.jpg">
+								</div>
+							</div>
+							<a class="btn btn-colored btn-theme-colored btn-lg text-uppercase font-13 mt-30" href="#">Read More</a>
+						</div>
+						<div class="col-xs-12 col-sm-6 col-md-4 pl-40 pl-sm-20 mr-sm-20">
+							<h3 class="text-uppercase line-bottom mt-sm-30 mt-0">Derniers projets</span>
+						</h3>
+						<div class="bxslider bx-nav-top p-0 m-0">
+							{% for projet in projets %}
+
+								{% set label='default' %}
+								{% if projet.etat == 'En attente' %}
+									{% set label ='default' %}
+								{% elseif projet.etat == 'En cours' %}
+									{% set label ='warning' %}
+								{% elseif projet.etat == 'Validé' %}
+									{% set label= 'success' %}
+								{% elseif projet.etat == 'Refusé' %}
+									{% set label = 'danger' %}
+								{% endif %}
+
+								<div class="col-xs-12 pr-0 col-sm-6 col-md-6 mb-20">
+									<div class="pricing  maxwidth400">
+										<div class="row">
+											<div class="icon-box icon-box-effect mb-0 mt-0 p-15 bg-theme-colored border-bottom-3px">
+												<a class="icon mb-0 mr-0 pull-left flip" href="#">
+													<i class="fa fa-bar-chart text-white font-48"></i>
+												</a>
+												<div class="ml-80">
+													<h5 class="icon-box-title mt-15 mb-5 text-white text-left">
+														<strong>{{ projet.titre }}</strong>
+													</h5>
+													<div class="row">
+														<div class="col-md-5">
+															<span class="badge badge-secondary">{{projet.budget | number_format(2, ',', '.')}}
+																€</span>
+														</div>
+														<div class="col-md-6">
+															<span class="label label-{{ label }}">{{projet.etat}}</span>
+														</div>
+													</div>
+													<p class="text-white text-left">Lorem ipsum dolor sit ametcon
+																																																																																																																																																																																																																																																																																																																																																																												
+																																																																																																																																																																																																																																																																																																																																																																												elit sectetu radipisicing. Mollitia quasi.<a class="font-15 pl-10 text-white" href="{{path('projet_account_show',{'id':projet.id})}}">
+															→ Lire la suite...</a>
+													</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							{% endfor %}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Divider: why choose us 1 -->
+	<section class="divider parallax" data-bg-img="/images/bg/bg3.jpg" data-parallax-ratio="0.7">
+		<div class="container pt-0 pb-0">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-4">
+					<div class="bg-white-transparent-9 pb-10 p-40">
+						<h2 class="mb-20 mt-30 line-height-1 text-center text-uppercase">Où
+							<span class="text-theme-color-2">
+								nous trouvez ?</span>
+						</h2>
+						<div class="row">
+							{% for filiale in filiales %}
+								<div class="col-xs-12 col-sm-6 col-md-6">
+									<div class="icon-box p-15 mb-0 mb-sm-0 mt-sm-0">
+										<a class="icon pull-left sm-pull-none flip" href="#">
+											<i class="fa fa-map-marker text-theme-colored font-50"></i>
+										</a>
+										<div class="ml-70 ml-sm-0">
+											<h4 class="icon-box-title mt-15 mb-5">{{filiale.pays}}</h4>
+											<p>{{filiale.adresse}}
+												{{filiale.codePostal}}
+												{{filiale.ville}}</p>
+										</div>
+									</div>
+								</div>
+							{% endfor %}
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<!-- Section: Blog -->
+	<section id="blog">
+		<div class="container pt-70">
+			<div class="section-title text-center">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2">
+						<h2 class="mt-0 line-height-1 text-uppercase">Dernières
+							<span class="text-theme-color-2">
+								actualitées</span>
+						</h2>
+
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="owl-carousel-3col owl-nav-top mb-sm-0" data-dots="true">
+						{% for article in articles %}
+							<div class="item">
+								<article class="post clearfix mb-sm-30">
+									<div class="entry-header">
+										<div class="post-thumb thumb">
+											<img alt="" class="img-responsive img-fullwidth" src="images/1.jpg">
+										</div>
+									</div>
+									<div class="entry-content p-20 pr-10">
+										<div class="entry-meta mt-0 no-bg no-border">
+											<div class="event-content">
+												<h4 class="entry-title text-white text-capitalize m-0">
+													<a href="#">{{article.titre | slice(0,30)}}...</a>
+												</h4>
+											</div>
+										</div>
+										<p class="mt-10">{{article.contenue |slice(0,100)|raw}}
+											<a class="text-theme-colored font-15 pl-20" href="#">
+												Lire la suite →</a>
+										</p>
+										<div class="clearfix"></div>
+									</div>
+									<div class="bg-theme-colored p-5 text-center pt-10 pb-10">
+										<span class="mb-10 text-white mr-10 font-13">
+											<i class="fa fa-calendar mr-5 text-white"></i>
+											{{article.dateCreation | date('d-M-Y')}}</span>
+										<span class="mb-10 text-white mr-10 font-13">
+											<i class="fa fa-commenting-o mr-5 text-white"></i>
+											{{ article.commenaires|length }}
+											commentaires</span>
+									</div>
+								</article>
+							</div>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Diver: Video Background  -->
+	<section class="divider parallax layer-overlay pt-10 pb-20 overlay-theme-colored-9" data-bg-img="images/bg/bg1.jpg" data-parallax-ratio="0.7">
+		<div
+			class="container pt-60 pb-50">
+			<!-- Section Content -->
+			<div class="section-content">
+				<div class="row">
+					<div class="col-md-6 p-20 pt-0">
+						<h3 class="text-white text-uppercase font-30 font-weight-600 mt-0 mb-20">Resumé vidéos de notre mission</h3>
+						<p class="text-white lead p-10 pl-0 text-left">Lorem ipsum dolor sit amet, consectetur
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    																																																																																																																																											adipisicing elit.Earum quos quae, provident aspernatur et voluptatibus saepe rec
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    																																																																																																																																											usandae accusamus sit non, numquam pariatur odit veniam aut andae accusamus sit non,
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    																																																																																																																																											num.</p>
+						<a class="btn bg-white btn-circled btn-lg ml-0  mt-10 mb-sm-30" href="#">Watch More</a>
+					</div>
+					<div class="col-md-6">
+						<div class="fluid-video-wrapper">
+							<iframe allowfullscreen height="280" src="https://www.youtube.com/embed/wuLvZZ3Xj4c" width="560"></iframe>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Section: popular services  -->
+	<section>
+		<div class="container pr-5 pl-5 mt-0 pt-70 pb-10 mb-0">
+			<div class="section-title text-center">
+				<div class="row">
+					<div class="col-md-12">
+						<h2 class="mt-0 line-height-1 text-center text-uppercase mb-10 text-black-333">Communication
+							<span class="text-theme-color-2">
+								utile</span>
+						</h2>
+						<p class="pb-20">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem autem<br>
+							voluptatem obcaecati!</p>
+						<!-- Works Filter -->
+						<div class="portfolio-filter text-center mb-40" data-link-with="grid-petcare-gallery">
+							<a class="active mb-sm-10" data-filter="*" href="#">Tous</a>
+							<a class="" data-filter=".walking" href="#walking">Comores</a>
+							<a class="" data-filter=".reading" href="#reading">Réligion</a>
+							<a class="" data-filter=".eating" href="#eating">International</a>
+							<a class="" data-filter=".fitness" href="#fitness">Culture</a>
+							<a class="" data-filter=".nursing" href="#nursing">Autres</a>
+						</div>
+						<!-- End Works Filter -->
+
+						<!-- Portfolio Gallery Grid -->
+						<div
+							class="gallery-isotope grid-4 gutter clearfix" id="grid-petcare-gallery">
+
+							<!-- Portfolio Item Start -->
+							<div class="gallery-item walking">
+								<div class="item">
+									<div class="project mb-30 border-2px">
+										<div class="thumb">
+											<img alt="" class="img-fullwidth" src="{{asset('images/c1.jpg')}}">
+										</div>
+										<div class="project-details p-15 pt-10 pb-10">
+											<h4 class="font-weight-700 text-uppercase">
+												<a href="page-services-transportation.html">Walking
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            															Services</a>
+											</h4>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- Portfolio Item End -->
+
+							<!-- Portfolio Item Start -->
+							<div class="gallery-item walking">
+								<div class="item">
+									<div class="project mb-30 border-2px">
+										<div class="thumb">
+											<img alt="" class="img-fullwidth" src="{{asset('images/c2.jpg')}}">
+										</div>
+										<div class="project-details p-15 pt-10 pb-10">
+											<h4 class="font-weight-700 text-uppercase">
+												<a href="page-services-transportation.html">Walking
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            															Services</a>
+											</h4>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- Portfolio Item End -->
+
+							<!-- Portfolio Item Start -->
+							<div class="gallery-item reading">
+								<div class="item">
+									<div class="project mb-30 border-2px">
+										<div class="thumb">
+											<img alt="" class="img-fullwidth" src="{{asset('images/c3.jpg')}}">
+										</div>
+										<div class="project-details p-15 pt-10 pb-10">
+											<h4 class="font-weight-700 text-uppercase">
+												<a href="page-services-transportation.html">Reading
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            															Services</a>
+											</h4>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- Portfolio Item End -->
+
+							<!-- Portfolio Item Start -->
+							<div class="gallery-item reading">
+								<div class="item">
+									<div class="project mb-30 border-2px">
+										<div class="thumb">
+											<img alt="" class="img-fullwidth" src="{{asset('images/c4.jpg')}}">
+										</div>
+										<div class="project-details p-15 pt-10 pb-10">
+											<h4 class="font-weight-700 text-uppercase">
+												<a href="page-services-transportation.html">Reading
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            															Services</a>
+											</h4>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- Portfolio Item End -->
+
+
+						</div>
+						<!-- End Portfolio Gallery Grid -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<!-- Section: Experts -->
+	<section id="experts">
+		<div class="container pt-70 pb-70">
+			<div class="section-title text-center">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2">
+						<h2 class="mt-0 line-height-1 text-center text-uppercase mb-10 text-black-333">Notre
+							<span class="text-theme-color-2">
+								Equipe</span>
+						</h2>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem autem<br>
+							voluptatem
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    									obcaecati!</p>
+					</div>
+				</div>
+			</div>
+			<div class="row mtli-row-clearfix">
+				<div class="col-md-12">
+					<div class="owl-carousel-4col">
+						<div class="item">
+							<div class="team-members mb-sm-30 border-2px">
+								<div class="team-thumb text-center">
+									<img alt="" class="img-fullwidth" src="images/bg-1.jpg">
+									<div class="team-details1  bg-theme-colored pt-0 pb-0">
+										<ul class="styled-icons icon-circled icon-sm icon-dark  icon-theme-colored pt-10 pb-10">
+											<li>
+												<a href="#">
+													<i class="fa fa-facebook"></i>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<i class="fa fa-twitter"></i>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<i class="fa fa-skype"></i>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<i class="fa fa-google-plus"></i>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="team-lower-block text-center p-20">
+									<h4 class="mt-0 pb-0 p-10">
+										<a href="page-experts-details.html">Jacobe
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    													Martin</a>
+									</h4>
+									<p>Lorem ipsum dolor sit ametcon secte adipisicing elita dipi sicing elit
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        												lita dipi adip.</p>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="team-members mb-sm-30 border-2px">
+								<div class="team-thumb text-center">
+									<img alt="" class="img-fullwidth" src="images/bg-2.jpg">
+									<div class="team-details1  bg-theme-colored pt-0 pb-0">
+										<ul class="styled-icons icon-circled icon-sm icon-dark  icon-theme-colored pt-10 pb-10">
+											<li>
+												<a href="#">
+													<i class="fa fa-facebook"></i>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<i class="fa fa-twitter"></i>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<i class="fa fa-skype"></i>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<i class="fa fa-google-plus"></i>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="team-lower-block text-center p-20">
+									<h4 class="mt-0 pb-0 p-10">
+										<a href="page-experts-details.html">Jacobe
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    													Martin</a>
+									</h4>
+									<p>Lorem ipsum dolor sit ametcon secte adipisicing elita dipi sicing elit
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        												lita dipi adip.</p>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="team-members mb-sm-30 border-2px">
+								<div class="team-thumb text-center">
+									<img alt="" class="img-fullwidth" src="images/bg-3.jpg">
+									<div class="team-details1  bg-theme-colored pt-0 pb-0">
+										<ul class="styled-icons icon-circled icon-sm icon-dark  icon-theme-colored pt-10 pb-10">
+											<li>
+												<a href="#">
+													<i class="fa fa-facebook"></i>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<i class="fa fa-twitter"></i>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<i class="fa fa-skype"></i>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<i class="fa fa-google-plus"></i>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="team-lower-block text-center p-20">
+									<h4 class="mt-0 pb-0 p-10">
+										<a href="page-experts-details.html">Jacobe
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    													Martin</a>
+									</h4>
+									<p>Lorem ipsum dolor sit ametcon secte adipisicing elita dipi sicing elit
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        												lita dipi adip.</p>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="team-members mb-sm-30 border-2px">
+								<div class="team-thumb text-center">
+									<img alt="" class="img-fullwidth" src="images/bg-4.jpg">
+									<div class="team-details1  bg-theme-colored pt-0 pb-0">
+										<ul class="styled-icons icon-circled icon-sm icon-dark  icon-theme-colored pt-10 pb-10">
+											<li>
+												<a href="#">
+													<i class="fa fa-facebook"></i>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<i class="fa fa-twitter"></i>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<i class="fa fa-skype"></i>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<i class="fa fa-google-plus"></i>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="team-lower-block text-center p-20">
+									<h4 class="mt-0 pb-0 p-10">
+										<a href="page-experts-details.html">Jacobe
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    													Martin</a>
+									</h4>
+									<p>Lorem ipsum dolor sit ametcon secte adipisicing elita dipi sicing elit
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        												lita dipi adip.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<!-- Divider: Clients -->
+	<section class="clients bg-theme-colored">
+		<div class="container pt-10 pb-10 pb-sm-0 pt-sm-0">
+			<div class="row">
+				<div class="col-md-12">
+					<h2 class="text-white my-5 text-uppercase">Nos Partenaires</h2>
+					<!-- Section: Clients -->
+					<div class="owl-carousel-6col transparent text-center owl-nav-top">
+						<div class="item">
+							<a href="#"><img alt="" src="images/w1.png"></a>
+						</div>
+						<div class="item">
+							<a href="#"><img alt="" src="images/w2.png"></a>
+						</div>
+						<div class="item">
+							<a href="#"><img alt="" src="images/w3.png"></a>
+						</div>
+						<div class="item">
+							<a href="#"><img alt="" src="images/w4.png"></a>
+						</div>
+						<div class="item">
+							<a href="#"><img alt="" src="images/w5.png"></a>
+						</div>
+						<div class="item">
+							<a href="#"><img alt="" src="images/w6.png"></a>
+						</div>
+						<div class="item">
+							<a href="#"><img alt="" src="images/w3.png"></a>
+						</div>
+						<div class="item">
+							<a href="#"><img alt="" src="images/w4.png"></a>
+						</div>
+						<div class="item">
+							<a href="#"><img alt="" src="images/w5.png"></a>
+						</div>
+						<div class="item">
+							<a href="#"><img alt="" src="images/w6.png"></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+{% endblock %}

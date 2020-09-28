@@ -1,0 +1,145 @@
+{% extends "base.html.twig" %}
+{% block title %}Profil Abonné
+{% endblock %}
+{% block body %}
+
+	<!-- Start main-content -->
+	<div
+		class="main-content bg-lighter">
+		<!-- Section: inner-header -->
+		{% include "partials/header-page.html.twig" with {'page': 'Parofil Abonné'} %}
+
+		<!-- Section: Blog -->
+		<section>
+			<div class="container mt-30 mb-0 pt-30 pb-30">
+				<div class="row">
+					<div class="col-md-8 blog-pull-right">
+						<div class="single-service">
+							<div class="row">
+								<div class="col-md-12">
+
+									<div class="row">
+										<div class="col-md-6">
+											<h3 class="text-theme-colored title-border mb-1 mt-20">Information personnel</h3>
+											<div class="card bg-white" style="box-shadow: 1px 1px 1px #e7e7e7;">
+												<div class="card-header">
+													<div class="card-title"></div>
+												</div>
+												<div class="card-body">
+													{% if app.user.photo %}
+														<img src="/images/profil/{{app.user.photo}}" class="img-profil img-circle mt-8">
+													{% else %}
+														<img src="/images/avatar.png" class="img-profil img-circle">
+													{% endif %}
+													<strong>
+														<i class="fa fa-user"></i>
+														{{app.user.civilite}}
+														{{app.user.getFullName }}
+													</strong>
+													<hr>
+
+													<i class="fa fa-envelope"></i>
+													:
+													<em>{{app.user.email}}</em>
+													<hr>
+													<i class="fa fa-phone"></i>
+													:
+													<em>{{app.user.telephone}}</em>
+													<hr>
+													<i class="fa fa-map"></i>
+													:
+													<em>{{app.user.adresse}}</em>
+													<em>
+														{{app.user.codePostal}}
+														{{app.user.ville}}</em><hr>
+												</div>
+												<div class="card-footer">
+
+													<a href="" class="btn btn-info">
+														Mettre à jour mon profil
+														<i class="fa fa-edit"></i>
+													</a>
+
+												</div>
+											</div>
+										</div>
+										{% set label='default' %}
+										{% if projet.etat == 'En attente' %}
+											{% set label ='default' %}
+										{% elseif projet.etat == 'En cours' %}
+											{% set label ='warning' %}
+										{% elseif projet.etat == 'Validé' %}
+											{% set label= 'success' %}
+										{% elseif projet.etat == 'Refusé' %}
+											{% set label = 'danger' %}
+										{% endif %}
+
+										<div class="col-md-6">
+											<h3 class="text-theme-colored title-border mb-1 mt-20">Mon dernier projets</h3>
+											<div class="card bg-white" style="box-shadow: 1px 1px 1px #e7e7e7;">
+												<div class="card-header">
+													<div class="card-title"></div>
+												</div>
+												<div class="card-body">
+													<i class="pe-7s-diamond  text-theme-colored"></i>
+													Projet:
+													<strong>
+														{{projet.titre}}</strong>
+													<hr>
+													Date de début:
+													{{ projet.dateDebut | date('m-d-Y H:m')}}
+													<hr>
+													Date de Fin:
+													{{ projet.dateFin | date('m-d-Y H:m')}}
+													<hr>
+													Status :
+													<span class="label label-{{label}}">
+														{{projet.etat}}
+													</span>
+
+													<hr>
+													<i class="fa fa-bar-chart"></i>
+													Budget souhaité:
+													<em class="badge badge-default">{{projet.budget | number_format(2, ',', '.') }}
+														€</em>
+													<hr>
+												</div>
+												<div class="card-footer">
+													<a href="{{path('account_projet_index')}}" class="btn btn-info">
+														Suivie de mon projet
+														<i class="fa fa-check"></i>
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+
+
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-12 col-md-4">
+						<div class="sidebar sidebar-left mt-sm-30 ml-40">
+							<div class="widget">
+								<h4 class="widget-title line-bottom">
+									<i class="fa fa-mecanic"></i>
+									Parametrage</h4>
+								{% include "partials/aside.html.twig" %}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+	<!-- end main-content -->
+
+	<a class="scrollToTop" href="#">
+		<i class="fa fa-angle-up"></i>
+	</a>
+</div>
+
+<!-- Footer Scripts -->
+<!-- JS | Custom script for all pages -->
+<script src="js/custom.js"></script></body></html>{% endblock %}

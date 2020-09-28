@@ -1,0 +1,94 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Actualités
+{% endblock %}
+
+{% block body %}
+
+	<!-- Start main-content -->
+	<div
+		class="main-content">
+		<!-- Section: inner-header -->
+		{% include "partials/header-page.html.twig" with {'page': 'Actualités'} %}
+
+		<section>
+			<div class="container">
+				<div class="row multi-row-clearfix">
+					<div class="blog-posts">
+						{% for article in articles %}
+							<div class="col-md-4">
+								{{article.id}}
+								<article class="post clearfix mb-30 bg-lighter">
+									{% if article.thumbnail != null %}
+										<div class="entry-header">
+											<div class="post-thumb thumb">
+												<img src="{{vich_uploader_asset(article,'imageFile')}}" alt="" class="img-responsive img-fullwidth">
+											</div>
+										</div>
+									{% endif %}
+									<div class="entry-content border-1px p-20 pr-10">
+										<div class="entry-meta media mt-0 no-bg no-border">
+											<div class="entry-date media-left text-center flip bg-theme-colored pt-5 pr-15 pb-5 pl-15">
+												<ul>
+													<li class="font-16 text-white font-weight-600">{{article.dateCreation | date('d')}}</li>
+													<li class="font-12 text-white text-uppercase">{{article.dateCreation | date('M')}}</li>
+												</ul>
+											</div>
+											<div class="media-body pl-15">
+												<div class="event-content pull-left flip">
+													<h4 class="entry-title text-white m-0 mt-5">
+														<a href="#">{{article.titre}}</a>
+													</h4>
+													<span class="mb-10 text-gray-darkgray mr-10 font-13">
+														<i class="fa fa-commenting-o mr-5 text-theme-colored"></i>
+														{{article.commenaires | length }}
+														Commentaires</span>
+													<span class="mb-10 text-gray-darkgray mr-10 font-13">
+														<i class="fa fa-heart-o mr-5 text-theme-colored"></i>
+														895 Likes</span>
+												</div>
+											</div>
+										</div>
+										<p class="mt-10">{{article.contenue |slice(0,100)|raw }}</p>
+										<a href="{{path('article_show',{'slug':article.slug})}}" class="btn-read-more">Lire la suite</a>
+										<div class="clearfix"></div>
+									</div>
+								</article>
+							</div>
+						{% endfor %}
+					</div>
+				</div>
+
+				<nav aria-label="Page navigation example">
+					<ul class="pagination justify-content-center">
+						<li class="page-item {% if page == 1 %} disabled {% endif %}">
+							<a class="page-link" href="{{path('articles_index',{'page': page - 1 })}}" aria-label="Previous">
+								<span aria-hidden="true">&laquo;</span>
+								<span class="sr-only">Precedent</span>
+							</a>
+						</li>
+						{% for i in 1..totalpages %}
+							<li class="page-item {% if page == i %} active {% endif %}">
+								<a class="page-link" href="{{path('articles_index',{'page': i })}}">{{ i }}</a>
+							</li>
+						{% endfor %}
+						<li class="page-item {% if page == totalpages %} disabled {% endif %}">
+							<a class="page-link" href="{{path('articles_index', {'page': page + 1 })}}" aria-label="Next">
+								<span aria-hidden="true">&raquo;</span>
+								<span class="sr-only">Suivant</span>
+							</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</section>
+
+	</div>
+	<!-- end main-content -->
+
+
+	<a class="scrollToTop" href="#">
+		<i class="fa fa-angle-up"></i>
+	</a>
+</div>
+<!-- end wrapper -->{% endblock %}

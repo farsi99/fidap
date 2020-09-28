@@ -1,0 +1,89 @@
+{% extends "base.html.twig" %}
+{% block title %}Modifier votre mot de passe
+{% endblock %}
+{% block body %}
+    <body class="">
+        <div
+            id="wrapper" class="clearfix">
+            <!-- Start main-content -->
+            <div
+                class="main-content">
+                <!-- Section: inner-header -->
+                {% include "partials/header-page.html.twig" with {'page': 'Création de compte'} %}
+                <div class="row">
+                    <div class="col-md-12">
+                        {% for key, messages in app.flashes %}
+                            <div class="alert alert-{{key}}">
+                                {% for message in messages %}
+                                    <p>{{message|raw}}</p>
+                                {% endfor %}
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <!-- Divider: Contact -->
+                <section class="divider">
+                    <div class="container">
+                        <div class="row pt-30">
+                            <div class="col-md-4">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-12">
+                                        <div class="icon-box left media bg-deep p-30 mb-20">
+                                            <a class="media-left pull-left" href="#">
+                                                <i class="pe-7s-map-2 text-theme-colored"></i>
+                                            </a>
+                                            <div class="media-body">
+                                                <strong>NOTRE SIEGE EN FRANCE</strong>
+                                                <p>#405, Rue de provence 94800</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-12">
+                                        <div class="icon-box left media bg-deep p-30 mb-20">
+                                            <a class="media-left pull-left" href="#">
+                                                <i class="pe-7s-call text-theme-colored"></i>
+                                            </a>
+                                            <div class="media-body">
+                                                <strong>CONTACT PAR TELEPHONE</strong>
+                                                <p>+325 12345 65478</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-12">
+                                        <div class="icon-box left media bg-deep p-30 mb-20">
+                                            <a class="media-left pull-left" href="#">
+                                                <i class="pe-7s-mail text-theme-colored"></i>
+                                            </a>
+                                            <div class="media-body">
+                                                <strong>CONTACTE PAR E-MAIL</strong>
+                                                <p>supporte@yourdomin.com</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-12">
+                                        <div class="icon-box left media bg-deep p-30 mb-20">
+                                            <a class="media-left pull-left" href="#">
+                                                <i class="pe-7s-film text-theme-colored"></i>
+                                            </a>
+                                            <div class="media-body">
+                                                <strong>CONTACT VISIO SKYPE</strong>
+                                                <p>ThemeMascotSkype</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <h3 class="line-bottom mt-0 mb-20">Formulaire de modification de mot de passe !</h3>
+                                <!-- Contact Form -->
+                                {{form(form)}}
+
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <!-- end main-content -->
+
+            </body>
+        {% endblock %}

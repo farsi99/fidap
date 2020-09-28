@@ -1,0 +1,233 @@
+{% extends "admin/base.html.twig" %}
+{% block title %}Gestion des articles
+{% endblock %}
+{% block body %}
+    <div
+        class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        {% include "admin/partials/sous-header.html.twig" with {'page': 'Ajouter'} %}
+        <!-- Main content -->
+        <section class="content">
+            <div class="row">
+
+                {{form_start(form)}}
+                <input type="hidden" name="id_type" value="2">
+                <input
+                type="hidden" name="id" value="">
+
+                <!-- /.col (left) -->
+                <div class="col-md-8">
+                    <div class="box box-primary">
+                        <div
+                            class="box-body">
+                            <!-- Date -->
+                            <div class="form-group">
+                                {{form_label(form.titre)}}
+                                <div class="input-group date">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-edit"></i>
+                                    </div>
+                                    {{form_widget(form.titre,{'attr':{'class':'form-control pull-right'}})}}
+                                </div>
+                                {% if form_errors(form.titre) %}
+                                    <div class="alert alert-danger small">
+                                        {{form_errors(form.titre)}}
+                                    </div>
+                                {% endif %}
+                                <!-- /.input group -->
+                            </div>
+                            <div class="form-group">
+                                {{form_label(form.resume)}}
+                                <div class="input-group date">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-file-o"></i>
+                                    </div>
+                                    {{form_widget(form.resume,{'attr':{'class':'form-control pull-right'}})}}
+                                </div>
+                                {% if form_errors(form.resume) %}
+                                    <div class="alert alert-danger small">
+                                        {{form_errors(form.resume)}}
+                                    </div>
+                                {% endif %}
+                                <!-- /.input group -->
+                            </div>
+
+                            <div class="form-group">
+                                {{form_label(form.meta_title)}}
+                                <div class="input-group date">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-google"></i>
+                                    </div>
+                                    {{form_widget(form.meta_title,{'attr':{'class':'form-control pull-right'}})}}
+                                </div>
+                                <!-- /.input group -->
+                            </div>
+                            <!-- /.form group -->
+                            <div class="form-group">
+                                {{form_label(form.meta_description)}}
+                                <div class="input-group date">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-firefox"></i>
+                                    </div>
+                                    {{form_widget(form.meta_description,{'attr':{'class':'form-control pull-right'}})}}
+                                </div>
+                                <!-- /.input group -->
+                            </div>
+                            <!-- /.form group -->
+                            <!-- Date and time range -->
+                            <div class="form-group">
+                                {{form_label(form.dateCreation)}}
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-clock-o"></i>
+                                    </div>
+                                    {{form_widget(form.dateCreation,{'attr':{'class':'form-control pull-right'}})}}
+                                </div>
+                                <!-- /.input group -->
+                            </div>
+                            <!-- /.form group -->
+
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+                    <!-- /.box -->
+
+                </div>
+                <!-- /.col (right) -->
+                <div
+                    class="col-md-4">
+
+                    <!-- /bloc chargment d'image -->
+                    <div class="box box-danger">
+                        <div class="box-header">
+                            <h3 class="box-title">Image à la une</h3>
+                        </div>
+                        <div class="box-body">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-photo"></i>
+                                    </div>
+                                    {{form_widget(form.imageFile,{'attr':{'class':'form-control pull-left'}})}}
+
+                                </div>
+                                <!-- /.input group -->
+                            </div>
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+                    <!-- /.box -->
+
+                </div>
+                <div
+                    class="col-md-4">
+
+                    <!-- /bloc chargment d'image -->
+                    <div class="box box-warning">
+                        <div class="box-header">
+                            <h3 class="box-title">Publication de l'article</h3>
+                        </div>
+                        <div class="box-body">
+
+                            <div class="form-group">
+                                {{form_label(form.publication)}}
+                                <div class="input-group date">
+
+                                    {{form_widget(form.publication,{'attr':{'class':' pull-left'}})}}
+                                </div>
+                                <!-- /.input group -->
+                            </div>
+                            <div class="form-group" hidden>
+                                {{form_label(form.TypeArticle)}}
+                                <div class="input-group date">
+
+                                    {{form_widget(form.TypeArticle,{'attr':{'class':' pull-left'}})}}
+                                </div>
+                                <!-- /.input group -->
+                            </div>
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+                    <!-- /.box -->
+
+                </div>
+                <div
+                    class="col-md-4" hidden>
+
+                    <!-- /bloc chargment d'image -->
+                    <div class="box box-warning">
+                        <div class="box-header"></div>
+                        <div class="box-body">
+                            <div class="form-group">
+                                {{form_label(form.menu)}}
+                                <div class="input-group date">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-list"></i>
+                                    </div>
+                                    {{form_widget(form.menu,{'attr':{'class':'form-control pull-left'}})}}
+                                </div>
+                                <!-- /.input group -->
+                            </div>
+                            <div class="form-group">
+                                {{form_label(form.AffichageMenu)}}
+                                <div class="input-group date">
+
+                                    {{form_widget(form.AffichageMenu,{'attr':{'class':' pull-left'}})}}
+                                </div>
+                                <!-- /.input group -->
+                            </div>
+                            <div class="form-group" hidden>
+                                {{form_label(form.TypeArticle)}}
+                                <div class="input-group date">
+
+                                    {{form_widget(form.TypeArticle,{'attr':{'class':' pull-left'}})}}
+                                </div>
+                                <!-- /.input group -->
+                            </div>
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+                    <!-- /.box -->
+
+                </div>
+
+                <div class="col-md-12">
+                    <div
+                        class="box box-info">
+
+                        <!-- /.box-header -->
+                        <div class="box-header">
+                            <h3 class="box-title">Description</h3>
+                            <!-- tools box -->
+                            <div class="pull-right box-tools"></div>
+                            <!-- /. tools -->
+                        </div>
+                        <div class="box-body pad">
+                            {{form_widget(form.contenue,{'attr':{'rows':'20','cols':'180','class':'hauteur'}})}}
+                            {% if form_errors(form.contenue) %}
+                                <div class="alert alert-danger small">
+                                    {{form_widget(form.contenue)}}
+                                </div>
+                            {% endif %}
+                        </div>
+
+
+                        <div class="box-body">
+                            <input type="hidden" name="verif" value="">
+                            <div class="col-xs-12 col-sm-12 no_padding">
+                                <input type="submit" value="Enregistrer la page" class="btn btn-info" style="padding:10px; margin-bottom:5px;">
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- /.box -->
+
+                </div>
+                <!-- /.col-->
+                {{form_end(form)}}
+            </div>
+            <!-- ./row -->
+        </section>
+        <!-- /.content -->
+    </div>
+{% endblock %}

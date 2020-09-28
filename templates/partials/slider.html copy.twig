@@ -1,0 +1,70 @@
+<!-- Slider Revolution Start -->
+<div class="rev_slider_wrapper">
+	<div class="rev_slider" data-version="5.0">
+		<ul>
+			{% for key, slider in sliders %}
+				{% if key == 0 %}
+					<!-- SLIDE 1 -->
+					<li
+						data-description="" data-easein="default" data-easeout="default" data-index="rs-1" data-masterspeed="default" data-rotate="0" data-saveperformance="off" data-slotamount="default" data-thumb="{{vich_uploader_asset(slider,'imageFile')}}" data-title="Slide 1" data-transition="slidingoverlayhorizontal">
+						<!-- MAIN IMAGE -->
+						<img alt="{{ slider.titre }}" class="rev-slidebg" data-bgfit="cover" data-bgparallax="10" data-bgposition="center top" data-bgrepeat="no-repeat" data-no-retina src="{{vich_uploader_asset(slider,'imageFile')}}">
+						<!-- LAYERS -->
+
+						<!-- LAYER NR. 1 -->
+							<div class="tp-caption tp-resizeme text-uppercase text-white font-raleway" data-fontsize="['100']" data-height="none" data-hoffset="['30']" data-lineheight="['110']" data-mask_in="x:0px;y:0px;s:inherit;e:inherit;" data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-responsive_offset="on" data-splitin="none" data-splitout="none" data-start="1000" data-transform_idle="o:1;s:500" data-transform_in="y:100;scaleX:1;scaleY:1;opacity:0;" data-transform_out="x:left(R);s:1000;e:Power3.easeIn;s:1000;e:Power3.easeIn;" data-voffset="['-110']" data-whitespace="nowrap" data-width="none" data-x="['left']" data-y="['middle']" id="rs-1-layer-1" style="z-index: 7; white-space: nowrap; font-weight:700;"> {{ slider.titre }}
+						</div>
+
+						<!-- LAYER NR. 2 -->
+						<div class="tp-caption tp-resizeme text-uppercase text-white font-raleway bg-theme-colored-transparent border-left-theme-color-2-6px pl-20 pr-20" data-fontsize="['35']" data-height="none" data-hoffset="['35']" data-lineheight="['54']" data-mask_in="x:0px;y:0px;s:inherit;e:inherit;" data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-responsive_offset="on" data-splitin="none" data-splitout="none" data-start="1000" data-transform_idle="o:1;s:500" data-transform_in="y:100;scaleX:1;scaleY:1;opacity:0;" data-transform_out="x:left(R);s:1000;e:Power3.easeIn;s:1000;e:Power3.easeIn;" data-voffset="['-25']" data-whitespace="nowrap" data-width="none" data-x="['left']" data-y="['middle']" id="rs-1-layer-2" style="z-index: 7; white-space: nowrap; font-weight:600;">{{ slider.resume }}
+
+						</div>
+
+						<!-- LAYER NR. 3 -->
+						<div class="tp-caption tp-resizeme text-white" data-fontsize="['16']" data-height="none" data-hoffset="['35']" data-lineheight="['28']" data-mask_in="x:0px;y:0px;s:inherit;e:inherit;" data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-responsive_offset="on" data-splitin="none" data-splitout="none" data-start="1400" data-transform_idle="o:1;s:500" data-transform_in="y:100;scaleX:1;scaleY:1;opacity:0;" data-transform_out="x:left(R);s:1000;e:Power3.easeIn;s:1000;e:Power3.easeIn;" data-voffset="['35']" data-whitespace="nowrap" data-width="none" data-x="['left']" data-y="['middle']" id="rs-1-layer-3" style="z-index: 5; white-space: nowrap; letter-spacing:0px; font-weight:400;"></div>
+
+						<!-- LAYER NR. 4 -->
+						<div class="tp-caption tp-resizeme" data-height="none" data-hoffset="['35']" data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;" data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-responsive_offset="on" data-splitin="none" data-splitout="none" data-start="1400" data-transform_idle="o:1;" data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;" data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" data-voffset="['100']" data-whitespace="nowrap" data-width="none" data-x="['left']" data-y="['middle']" id="rs-1-layer-4" style="z-index: 5; white-space: nowrap; letter-spacing:1px;">
+							<a class="btn btn-colored btn-lg btn-flat btn-theme-colored border-left-theme-color-2-6px pl-20 pr-20" href="#">View Details</a>
+						</div>
+					</li>
+				{% elseif key == 1 %}
+					<!-- SLIDE 2 -->
+					<li
+						data-description="" data-easein="default" data-easeout="default" data-index="rs-2" data-masterspeed="default" data-rotate="0" data-saveperformance="off" data-slotamount="default" data-thumb="{{vich_uploader_asset(slider,'imageFile')}}" data-title="Slide 2" data-transition="slidingoverlayhorizontal">
+						<!-- MAIN IMAGE -->
+						<img alt="{{ slider.titre }}" class="rev-slidebg" data-bgfit="cover" data-bgparallax="10" data-bgposition="center 40%" data-bgrepeat="no-repeat" data-no-retina src="{{vich_uploader_asset(slider,'imageFile')}}">
+						<!-- LAYERS -->
+
+						<!-- LAYER NR. 1 -->
+							<div class="tp-caption tp-resizeme text-uppercase  bg-theme-colored-transparent text-white font-raleway border-left-theme-color-2-6px border-right-theme-color-2-6px pl-30 pr-30" data-fontsize="['28']" data-height="none" data-hoffset="['0']" data-lineheight="['54']" data-mask_in="x:0px;y:0px;s:inherit;e:inherit;" data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-responsive_offset="on" data-splitin="none" data-splitout="none" data-start="1000" data-transform_idle="o:1;s:500" data-transform_in="y:100;scaleX:1;scaleY:1;opacity:0;" data-transform_out="x:left(R);s:1000;e:Power3.easeIn;s:1000;e:Power3.easeIn;" data-voffset="['-90']" data-whitespace="nowrap" data-width="none" data-x="['center']" data-y="['middle']" id="rs-2-layer-1" style="z-index: 7; white-space: nowrap; font-weight:400; border-radius: 30px;"> {{ slider.titre }}
+
+						</div>
+
+						<!-- LAYER NR. 2 -->
+						<div class="tp-caption tp-resizeme text-uppercase bg-theme-colored-transparent text-white font-raleway pl-30 pr-30" data-fontsize="['48']" data-height="none" data-hoffset="['0']" data-lineheight="['70']" data-mask_in="x:0px;y:0px;s:inherit;e:inherit;" data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-responsive_offset="on" data-splitin="none" data-splitout="none" data-start="1000" data-transform_idle="o:1;s:500" data-transform_in="y:100;scaleX:1;scaleY:1;opacity:0;" data-transform_out="x:left(R);s:1000;e:Power3.easeIn;s:1000;e:Power3.easeIn;" data-voffset="['-20']" data-whitespace="nowrap" data-width="none" data-x="['center']" data-y="['middle']" id="rs-2-layer-2" style="z-index: 7; white-space: nowrap; font-weight:700; border-radius: 30px;">
+							{{ slider.resume }}
+						</div>
+
+						<!-- LAYER NR. 3 -->
+						<div class="tp-caption tp-resizeme text-white text-center" data-fontsize="['16']" data-height="none" data-hoffset="['0']" data-lineheight="['28']" data-mask_in="x:0px;y:0px;s:inherit;e:inherit;" data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-responsive_offset="on" data-splitin="none" data-splitout="none" data-start="1400" data-transform_idle="o:1;s:500" data-transform_in="y:100;scaleX:1;scaleY:1;opacity:0;" data-transform_out="x:left(R);s:1000;e:Power3.easeIn;s:1000;e:Power3.easeIn;" data-voffset="['50']" data-whitespace="nowrap" data-width="none" data-x="['center']" data-y="['middle']" id="rs-2-layer-3" style="z-index: 5; white-space: nowrap; letter-spacing:0px; font-weight:400;">We
+																																																																																																																																																																																																			                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            									provides always our best services for our clients and always<br>
+							try to achieve our
+																																																																																																																																																																																																			                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            									client's trust and satisfaction.
+						</div>
+
+						<!-- LAYER NR. 4 -->
+						<div class="tp-caption tp-resizeme" data-height="none" data-hoffset="['0']" data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;" data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-responsive_offset="on" data-splitin="none" data-splitout="none" data-start="1400" data-transform_idle="o:1;" data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;" data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" data-voffset="['115']" data-whitespace="nowrap" data-width="none" data-x="['center']" data-y="['middle']" id="rs-2-layer-4" style="z-index: 5; white-space: nowrap; letter-spacing:1px;">
+							<a class="btn btn-default btn-circled btn-transparent pl-20 pr-20" href="#">Apply
+																																																																																																																																																																																																																																	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        										Now</a>
+						</div>
+					</li>
+				{% endif %}
+			{% endfor %}
+
+
+		</ul>
+	</div>
+	<!-- end .rev_slider -->
+</div>
+<!-- end .rev_slider_wrapper -->
